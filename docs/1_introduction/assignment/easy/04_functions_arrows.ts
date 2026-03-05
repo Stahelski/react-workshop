@@ -5,16 +5,20 @@
  */
 
 // 1) Skriv skriv om funksjonene slik at den blir en arrow function
-export function add(a: number, b: number): number {
+export function ad (a: number, b: number): number {
   return a+b;
 }
+export const add = (a: number, b: number): number => a + b;
 
 // 2) Gjør skriv om denne arrow-funksjonen til en vanlig function og fiks logikken slik at den gir tibake riktig svar
-export const evenOdd = (n: number): 'even' | 'odd' => {
+export const evenOd = (n: number): 'even' | 'odd' => {
   // tips: du kan sjekke om et tall er delbart på 2 med n % 2 === 0
   return 'even';
 };
 
+export function evenOdd(n: number): string {
+  return n % 2 === 0 ? "Even" : "Odd";
+}
 
 /** -------------------------- Self-check ---------------------------- 
  *  Kjør følgende kommando for å se om koden din kjørte
