@@ -1,0 +1,1 @@
+Run a file in terminal: npx tsx (path to file you want to run)
