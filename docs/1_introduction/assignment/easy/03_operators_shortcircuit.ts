@@ -4,28 +4,35 @@
  * Instruks: Bruk riktige operatorer. Unngå feil som at '' og 0 behandles som "mangler".
  */
 
+
+//  || = Logical OR, Returnerer første “truthy” verdi.
+//  ?? = Nullish Coalescing, Returnerer høyre side kun hvis venstre er null eller undefined
+//   | = union type (TypeScript), Verdien kan være enten string eller null
+//  ? = optional parameter(first?:),  Så first kan være: string eller null eller undefined - fordi den er optional
+
+
 // 1) Nullish fallback – behold '' og 0 som gyldige verdier
 export function safeTitle(input: string | number | null | undefined, fallback: string): string {
   // TODO: bruk ??
-  return '';
+  return (input ?? fallback).toString();
 }
 
 // 2) Vis tekst om cond er "truthy" – ellers tom streng
 export function showIf(cond: unknown, text: string): string {
   // TODO: bruk &&
-  return '';
+  return ((cond && text) || "") as string;
 }
 
 // 3) Korrekt fallback som returnerer et tall, hvis tallet ikke er en positiv integer returner 0
 export function fallbackZero(n: number | null | undefined): number {
   // TODO: bruk ??
-  return 0;
+  return ;
 }
 
 // 4) Streng sammenligning (strict equality), pass på typen!
 export function isExactZero(n: number|string): boolean {
   // TODO: bruk ===
-  return false;
+  return ;
 }
 
 // 5) sørg for at tallet er innenfor min og max
