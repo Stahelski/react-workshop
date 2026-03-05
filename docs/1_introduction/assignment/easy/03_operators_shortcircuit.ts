@@ -17,7 +17,7 @@ export function safeTitle(input: string | number | null | undefined, fallback: s
   return (input ?? fallback).toString();
 }
 
-// 2) Vis tekst om cond er "truthy" – ellers tom streng
+// 2) Vis tekst om cond er "truthy" – ellers tom streng.. - return første truthy av cond og text, hvist ingen av de er truthy return "" som streng.  
 export function showIf(cond: unknown, text: string): string {
   // TODO: bruk &&
   return ((cond && text) || "") as string;
@@ -26,19 +26,19 @@ export function showIf(cond: unknown, text: string): string {
 // 3) Korrekt fallback som returnerer et tall, hvis tallet ikke er en positiv integer returner 0
 export function fallbackZero(n: number | null | undefined): number {
   // TODO: bruk ??
-  return ;
+  return (Number.isInteger(n) && n > 0 ? n : undefined) ?? 0;
 }
 
 // 4) Streng sammenligning (strict equality), pass på typen!
 export function isExactZero(n: number|string): boolean {
   // TODO: bruk ===
-  return ;
+  return n === 0;
 }
 
 // 5) sørg for at tallet er innenfor min og max
 export function isInRange(n: number, min: number, max: number): boolean {
   // TODO: bruk Math.min/Math.max eller sammenligninger
-  return false;
+  return n >= min && n <= max;
 }
 
 /** -------------------------- Self-check ---------------------------- 
