@@ -6,13 +6,18 @@
 
 // 1) Object-destructuring med defaults og alias
 type User = { name?: string; address?: { city?: string } };
+
 export function userSummary(u: User): string {
   // TODO:
-  // - hent name med default "Ukjent"
+  const {name = "Ukjent", address: {city = "Ukjent by"} = {}} = u;
+
+  // - hent name med default "Ukjent" x
   // - hent city fra address med default "Ukjent by"
   // - bruk sikre defaults på mellomledd (={} / ?? {})
-  return '';
+  return `${name} @ ${city}`;
 }
+
+//! https://www.youtube.com/watch?v=NIq3qLaHCIs&t=360s
 
 // 2) Array-destructuring: hent ut brukernavnet
 export function getUsername(user: [string, string, string]): string {
