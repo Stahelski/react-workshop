@@ -8,12 +8,8 @@
 type User = { name?: string; address?: { city?: string } };
 
 export function userSummary(u: User): string {
-  // TODO:
   const {name = "Ukjent", address: {city = "Ukjent by"} = {}} = u;
 
-  // - hent name med default "Ukjent" x
-  // - hent city fra address med default "Ukjent by"
-  // - bruk sikre defaults på mellomledd (={} / ?? {})
   return `${name} @ ${city}`;
 }
 
@@ -21,15 +17,15 @@ export function userSummary(u: User): string {
 
 // 2) Array-destructuring: hent ut brukernavnet
 export function getUsername(user: [string, string, string]): string {
-  // TODO
-  return "";
+  const [, brukernavn ,] = user;
+
+  return `${brukernavn}`;
 }
 
 // 3) Destructuring i parameter + rest
 export function pickIdAndRest(item: { id: number; [k: string]: unknown }) {
   // TODO: plukk ut id, legg resten i 'rest'
-  const id = 0;
-  const rest = {};
+  const {id, ...rest} = item;
   return { id, rest };
 }
 
