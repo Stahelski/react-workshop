@@ -6,47 +6,58 @@
  * - Lage sorterings-kopier (ikke muter originalen)
  */
 
+//! npx tsx docs/1_introduction/assignment/medium/07_array_map_sort.ts
+
 // 1) doubleAll: returner ny liste med alle tall * 2
 export function doubleAll(nums: number[]): number[] {
-  // TODO: map
-  return [];
+
+  const newNums: number[] = nums.map(num => num * 2)
+  return newNums;
 }
 
 // 2) trimAll: trim whitespace på hvert navn
 export function trimAll(names: string[]): string[] {
-  // TODO: map
-  return [];
+  
+  const mn: string[] = names.map(name => name.trim())
+  return mn;
 }
 
 // 3) sortedNumbersAsc: returner SORTERT KOPI stigende (ikke mutér input!)
 export function sortedNumbersAsc(nums: number[]): number[] {
-  // TODO: [...nums].sort((a,b)=>a-b)
-  return [];
+
+  const sN = [...nums].sort((a, b) => a- b)
+  return sN;
 }
 
 // 4) sortedNumbersDesc: returner sortert kopi synkende
 export function sortedNumbersDesc(nums: number[]): number[] {
-  // TODO
-  return [];
+
+  const nD = [...nums].sort((b, a) => b - a)
+  return nD;
 }
 
 // 5) case-insensitive sort på strenger (kopi)
 export function sortedNamesCaseInsensitive(names: string[]): string[] {
-  // TODO:
-  return [];
+
+  const sN = [...names].sort((a, b) => a.localeCompare(b, "no"));
+  return sN;
 }
 
 // 6) sorter objekter på 'name' (A→Å) som kopi
 type User = { id: number; name: string; age: number };
+
 export function sortUsersByName(users: User[]): User[] {
-  // Tips: bruk localeCompare på name
-  return [];
+
+  const deepCopy = structuredClone(users);
+  return deepCopy.sort((a, b) => a.name.localeCompare(b.name, "no"));
 }
 
 // 7) sorter objekter på 'age' (lav→høy) som kopi
 export function sortUsersByAge(users: User[]): User[] {
   // TODO: numerisk sortering
-  return [];
+  const deepCopyNum = structuredClone(users);
+  
+  return deepCopyNum.sort((a, b) => a.age - b.age)
 }
 
 /** -------------------------- Self-check ----------------------------
