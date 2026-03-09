@@ -3,6 +3,10 @@
  * Ingen nettverk – vi simulerer med timeouts/promises.
  */
 
+import { fail, rejects } from "assert";
+import { promises } from "dns";
+import { resolve } from "path";
+
 // 1) sleep(ms): promise som fullfører etter ms
 export const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
 
@@ -34,28 +38,31 @@ export async function parAB(): Promise<string[]> {
 // 5) sometimesFails(shouldFail): reject ved shouldFail=true
 export async function sometimesFails(label: string, shouldFail: boolean): Promise<string> {
 
-  if(shouldFail === true){
-    throw new Error(`${label}`)
-  } else {sleep(100)}
-
-  return `${label}`;
+  if(shouldFail){
+   throw new Error(label)
+  } else {
+    await sleep(100)
+    return `${label}`
+  }
+   
 }
 
 // 6) safeRun: kjør en async funksjon med try/catch og returner "ok:<value>" eller "error:<msg>"
 export async function safeRun(task: () => Promise<string>): Promise<string> {
   // TODO: try/catch
+
   try{
-   task()
-  } catch (err) {
-    throw new Error(err)
+     const t = await task()
+     return `ok:${t}`
+     } catch (err) {
+ return `error:${err.message}`
   }
 
-  return "";
 }
 
 /** -------------------------- Self-check ----------------------------
  *  Kjør følgende kommando for å se om koden din kjørte
- *  npx tsx tasks/js-recap/medium/02_async_basics.ts
+ *  npx tsx docs/1_introduction/assignment/medium/08_async_basics.ts
  *  ------------------------------------------------------------------
 */
 (async () => {
