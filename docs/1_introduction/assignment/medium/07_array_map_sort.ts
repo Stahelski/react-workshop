@@ -54,7 +54,7 @@ export function sortUsersByName(users: User[]): User[] {
 
 // 7) sorter objekter på 'age' (lav→høy) som kopi
 export function sortUsersByAge(users: User[]): User[] {
-  // TODO: numerisk sortering
+
   const deepCopyNum = structuredClone(users);
   
   return deepCopyNum.sort((a, b) => a.age - b.age)

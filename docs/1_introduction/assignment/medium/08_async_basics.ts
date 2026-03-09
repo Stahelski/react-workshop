@@ -8,32 +8,49 @@ export const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
 
 // 2) fetchValue(label, ms): vent ms og returner label
 export async function fetchValue(label: string, ms: number): Promise<string> {
-  // TODO: bruk sleep, returner label etterpå
-  return '';
+  
+  await sleep(ms);
+  return label;
 }
 
 // 3) seqAB: hent "A"(300ms) og deretter "B"(300ms) SEKVENSIELT (ca. 600ms)
 export async function seqAB(): Promise<string[]> {
-  // TODO: await fetchValue('A',300); så await 'B'
-  return [];
+
+  const a = await fetchValue("A", 300)
+  const b = await fetchValue("B", 300)
+
+  return [a, b];
 }
 
 // 4) parAB: hent "A" og "B" PARALLELT (ca. 300ms) med Promise.all
 export async function parAB(): Promise<string[]> {
-  // TODO
-  return [];
+  const promiseA: Promise<string> = Promise.resolve("A")
+  const promiseB: Promise<string> = Promise.resolve("B")
+  
+  const res = await Promise.all([promiseA, promiseB])
+  return res;
 }
 
 // 5) sometimesFails(shouldFail): reject ved shouldFail=true
 export async function sometimesFails(label: string, shouldFail: boolean): Promise<string> {
-  // TODO: hvis shouldFail -> throw Error(label), ellers returner label etter 100ms
-  return '';
+
+  if(shouldFail === true){
+    throw new Error(`${label}`)
+  } else {sleep(100)}
+
+  return `${label}`;
 }
 
 // 6) safeRun: kjør en async funksjon med try/catch og returner "ok:<value>" eller "error:<msg>"
 export async function safeRun(task: () => Promise<string>): Promise<string> {
   // TODO: try/catch
-  return '';
+  try{
+   task()
+  } catch (err) {
+    throw new Error(err)
+  }
+
+  return "";
 }
 
 /** -------------------------- Self-check ----------------------------
