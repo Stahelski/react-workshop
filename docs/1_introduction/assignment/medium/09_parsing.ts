@@ -16,9 +16,9 @@ export function parseQuery(qs: string): Record<string, string> {
   // - for ... of (params) og legg inn i out (senere forekomst vinner)
   
   // Fjern ledende '?' hvis query-strengen starter med '?'
-  if(qs.startsWith("?")){
-    qs = qs.slice(1);
-  }
+if(qs.startsWith("?")){
+  qs = qs.slice(1)
+}
 
   // Ex inn: "a=1&b=hei%20på%20deg"
   const para = new URLSearchParams(qs);
@@ -31,10 +31,9 @@ export function parseQuery(qs: string): Record<string, string> {
     // Iterer gjennom hvert par og legg det inn i 'out'
     // Hvis nøkkelen allerede finnes, overskrives den (siste vinner)
     out[key] = value;
+    // Sett i objektet "out" et element med nøkkelen key og verdien value.
   })
-
-
-  return out;
+    return out;
 }
 
 
@@ -44,7 +43,16 @@ export function parseUrl(input: string): { path: string; query: Record<string, s
   // - new URL(input, 'http://example')
   // - hent .pathname og .search
   // - parseQuery(...)
-  return { path: '', query: {} };
+  
+  const url = new URL(input, "http://example");
+  
+  const path = url.pathname;
+  const queryStr = url.search;
+
+  const query = parseQuery(queryStr);
+
+ 
+  return { path, query };
 }
 
 /** -------------------------- Self-check ----------------------------
