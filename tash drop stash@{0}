@@ -1,0 +1,153 @@
+[1mdiff --git a/docs/1_introduction/assignment/easy/01_ts_basics.ts b/docs/1_introduction/assignment/easy/01_ts_basics.ts[m
+[1mindex 3b3fa63..97e424c 100644[m
+[1m--- a/docs/1_introduction/assignment/easy/01_ts_basics.ts[m
+[1m+++ b/docs/1_introduction/assignment/easy/01_ts_basics.ts[m
+[36m@@ -1,41 +1,41 @@[m
+ /**[m
+  * EASY 1: TypeScript grunnlag – variabler & typer (uten interfaces/types)[m
+  * [m
+[31m- * Instruks: Fyll inn KORREKT type der det står /* TODO type *\[m
+[32m+[m[32m * Instruks: Fyll inn KORREKT type der det står /* TODO type *[m
+  * [m
+  * Når alle type errors er vekke er du ferdig[m
+  */[m
+ [m
+ // 1) Primitive typer[m
+[31m-const age: /* TODO type */ = 27;[m
+[31m-const myName: /* TODO type */ = 'Ada';[m
+[31m-const isMember: /* TODO type */ = false;[m
+[31m-const scoreText: /* TODO type */ = `score:${age}`;[m
+[32m+[m[32mconst age: Number = 27;[m
+[32m+[m[32mconst myName: String = 'Ada';[m
+[32m+[m[32mconst isMember: Boolean = false;[m
+[32m+[m[32mconst scoreText: String = `score:${age}`;[m
+ [m
+ // 2) Null/undefined-bevissthet[m
+[31m-let maybeCount: /* TODO type */ = undefined;     [m
+[31m-let maybeNote: /* TODO type */ = null;          [m
+[32m+[m[32mlet maybeCount: undefined = undefined;[m[41m     [m
+[32m+[m[32mlet maybeNote: null = null;[m[41m          [m
+ [m
+ // 3) Arrays (to syntakser som betyr det samme)[m
+[31m-const pointsA: /* TODO type */ = [10, 20, 30];  [m
+[31m-const pointsB: /* TODO type */ = [5, 15];   [m
+[32m+[m[32mconst pointsA: Number[] = [10, 20, 30];[m[41m  [m
+[32m+[m[32mconst pointsB: Array<number> = [5, 15];[m[41m   [m
+ [m
+ // 4) Enkle funksjoner (angi parameter- og returtyper)[m
+[31m-function add(a: /* TODO type */, b: /* TODO type */): /* TODO type */ {[m
+[32m+[m[32mfunction add(a: number, b: number): number {[m
+   return a + b;[m
+ }[m
+ [m
+[31m-const toUpper = (s: /* TODO type */): /* TODO type */ => s.toUpperCase();[m
+[32m+[m[32mconst toUpper = (s: string): string => s.toUpperCase();[m
+ [m
+ // 5) Valgfri parameter med default-verdi[m
+[31m-function greet(who: /* TODO type */ = 'venn'): /* TODO type */ {[m
+[32m+[m[32mfunction greet(who: string = 'venn'): string {[m
+   return `Hei, ${who}`;[m
+ }[m
+ [m
+ // 6) Rest-parametere[m
+[31m-function sumAll(...nums: /* TODO type */): /* TODO type */ {[m
+[32m+[m[32mfunction sumAll(...nums: number[]): number {[m
+   return nums.reduce((acc, n) => acc + n, 0);[m
+ }[m
+ [m
+ // 7) Små sannhetsverdier[m
+[31m-const isAdult: /* TODO type */ = age >= 18;[m
+[32m+[m[32mconst isAdult: boolean = age >= 18;[m
+[1mdiff --git a/docs/1_introduction/assignment/easy/02_ternaries.ts b/docs/1_introduction/assignment/easy/02_ternaries.ts[m
+[1mindex c4657bc..4b24c95 100644[m
+[1m--- a/docs/1_introduction/assignment/easy/02_ternaries.ts[m
+[1m+++ b/docs/1_introduction/assignment/easy/02_ternaries.ts[m
+[36m@@ -5,6 +5,11 @@[m
+  * Unngå if/else – målet er å vise at du mestrer uttrykksformen.[m
+  */[m
+ [m
+[32m+[m[32m//  || = Logical OR, Returnerer første “truthy” verdi.[m
+[32m+[m[32m//  ?? = Nullish Coalescing, Returnerer høyre side kun hvis venstre er null eller undefined[m
+[32m+[m[32m//   | = union type (TypeScript), Verdien kan være enten string eller null[m
+[32m+[m[32m//  ? = optional parameter(first?:),  Så first kan være: string eller null eller undefined - fordi den er optional[m
+[32m+[m
+ // 1) Velg visningsnavn: first+last hvis minst én finnes, ellers username, ellers "Ukjent".[m
+ export function displayName([m
+   first?: string | null,[m
+[36m@@ -12,26 +17,32 @@[m [mexport function displayName([m
+   username?: string | null[m
+ ): string {[m
+   // TODO: bruk nested ternary + template literal[m
+[31m-  return '';[m
+[31m-}[m
+[32m+[m[32m  return first || last ? `${first ?? ""}${first && last ? " " : ""}${last ?? ""}` : username ?? "ukjent";[m
+[32m+[m[32m}[m[41m [m
+ [m
+ // 2) Karakter basert på poeng[m
+ // 90+ = "A", 80+ = "B", 70+ = "C", ellers "F"[m
+ export function grade(score: number): 'A' | 'B' | 'C' | 'F' {[m
+   // TODO: ternary-kjede[m
+[31m-  return 'F';[m
+[32m+[m[32m  return score >= 90 ? "A" : score >= 80 ? "B" : score >= 70 ? "C" : "F";[m
+ }[m
+ [m
+ // 3) Badge: "Admin Pro", "Admin", "Pro", "Member"[m
+ export function badge(isAdmin: boolean, isPro: boolean): string {[m
+   // TODO: kombiner flere ternaries/strings[m
+[31m-  return '';[m
+[32m+[m[32m  return isAdmin && isPro ? "Admin Pro" : isAdmin ? "Admin" : isPro ? "Pro" : "Member";[m
+ }[m
+[32m+[m[32m// is Admin true? and is Pro true? return Admin Pro[m
+[32m+[m[32m// is Admin true? and is Pro false? return Admin[m[41m [m
+[32m+[m[32m// is Admin false? and is Pro true? return Pro[m
+[32m+[m[32m// is Admin false? and is Pro false? return Member[m
+[32m+[m
+[32m+[m
+ [m
+ // 4) Tekst for antall (1 => "1 item", ellers "N items")[m
+ export function countLabel(n: number): string {[m
+   // TODO: ternary for plural[m
+[31m-  return '';[m
+[32m+[m[32m  return n === 1 ? `${n} item` : `${n} items`;[m
+ }[m
+ [m
+ /** -------------------------- Self-check ---------------------------- [m
+[36m@@ -40,19 +51,19 @@[m [mexport function countLabel(n: number): string {[m
+  *  ------------------------------------------------------------------[m
+ */[m
+ [m
+[31m-console.log(`Answer: ${displayName('Ada', null, 'ada123')}\t\t\tExpected: Ada`);[m
+[31m-console.log(`Answer: ${displayName(undefined, undefined, 'linus')}\t\t\tExpected: linux`);[m
+[31m-console.log(`Answer: ${displayName(undefined, undefined, undefined)}\t\t\tExpected: undefiend`);[m
+[32m+[m[32mconsole.log(`Answer: ${displayName('Ada', null, 'ada123')}\t\t\tExpected: Ada`); // Expected: Ada[m
+[32m+[m[32mconsole.log(`Answer: ${displayName(undefined, undefined, 'linus')}\t\t\tExpected: linux`); // Expected: linux[m
+[32m+[m[32mconsole.log(`Answer: ${displayName(undefined, undefined, undefined)}\t\t\tExpected: undefiend`); // Expected: undefiend[m
+ [m
+[31m-console.log(`Answer: ${grade(95)}\t\t\tExpected: A`);[m
+[31m-console.log(`Answer: ${grade(81)}\t\t\tExpected: B`);[m
+[31m-console.log(`Answer: ${grade(74)}\t\t\tExpected: C`);[m
+[31m-console.log(`Answer: ${grade(12)}\t\t\tExpected: F`);[m
+[32m+[m[32mconsole.log(`Answer: ${grade(95)}\t\t\tExpected: A`); // Expected: A[m
+[32m+[m[32mconsole.log(`Answer: ${grade(81)}\t\t\tExpected: B`); // Expected: B[m
+[32m+[m[32mconsole.log(`Answer: ${grade(74)}\t\t\tExpected: C`); // Expected: C[m
+[32m+[m[32mconsole.log(`Answer: ${grade(12)}\t\t\tExpected: F`); // Expected: D[m
+ [m
+[31m-console.log(`Answer: ${badge(true, true)}\t\t\tExpected: Admin Pro`);[m
+[31m-console.log(`Answer: ${badge(true, false)}\t\t\tExpected: Admin`);[m
+[31m-console.log(`Answer: ${badge(false, true)}\t\t\tExpected: Pro`);[m
+[31m-console.log(`Answer: ${badge(false, false)}\t\t\tExpected: Member`);[m
+[32m+[m[32mconsole.log(`Answer: ${badge(true, true)}\t\t\tExpected: Admin Pro`); // Expected: Admin Pro[m
+[32m+[m[32mconsole.log(`Answer: ${badge(true, false)}\t\t\tExpected: Admin`); // Expected: Admin[m[41m [m
+[32m+[m[32mconsole.log(`Answer: ${badge(false, true)}\t\t\tExpected: Pro`); // Expected: Pro[m
+[32m+[m[32mconsole.log(`Answer: ${badge(false, false)}\t\t\tExpected: Member`); // Expected: Member[m
+ [m
+[31m-console.log(`Answer: ${countLabel(1)}\t\t\tExpected: 1 item`);[m
+[31m-console.log(`Answer: ${countLabel(3)}\t\t\tExpected: 3 items`);[m
+[32m+[m[32mconsole.log(`Answer: ${countLabel(1)}\t\t\tExpected: 1 item`); // Expected: 1 item[m
+[32m+[m[32mconsole.log(`Answer: ${countLabel(3)}\t\t\tExpected: 3 items`); // Expected: 3 items[m
+[1mdiff --git a/docs/1_introduction/assignment/easy/03_operators_shortcircuit.ts b/docs/1_introduction/assignment/easy/03_operators_shortcircuit.ts[m
+[1mindex 59ad82c..5178525 100644[m
+[1m--- a/docs/1_introduction/assignment/easy/03_operators_shortcircuit.ts[m
+[1m+++ b/docs/1_introduction/assignment/easy/03_operators_shortcircuit.ts[m
+[36m@@ -4,34 +4,41 @@[m
+  * Instruks: Bruk riktige operatorer. Unngå feil som at '' og 0 behand

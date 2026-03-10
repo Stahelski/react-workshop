@@ -54,8 +54,8 @@ export async function safeRun(task: () => Promise<string>): Promise<string> {
   try{
      const t = await task()
      return `ok:${t}`
-     } catch (err) {
- return `error:${err.message}`
+     } catch (error: any) {
+ return `error:${error.message}`
   }
 
 }

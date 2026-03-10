@@ -14,8 +14,29 @@ export function parseQuery(qs: string): Record<string, string> {
   // - fjern ledende '?'
   // - bruk new URLSearchParams(...)
   // - for ... of (params) og legg inn i out (senere forekomst vinner)
+  
+  // Fjern ledende '?' hvis query-strengen starter med '?'
+  if(qs.startsWith("?")){
+    qs = qs.slice(1);
+  }
+
+  // Ex inn: "a=1&b=hei%20på%20deg"
+  const para = new URLSearchParams(qs);
+  //! new URLSearchParams() - returnerer alltid (Key også Value) i den rekkefølgen.
+  // Ex: out: [("a", "1"), ("b", "hei på deg")]
+  // Ex: Key = "a", Value = "1"
+
+  //! .forEach() - Første parameter er alltid Value. Andre parameter er alltid Key. (Value også Key) i den rekkefølgen.
+  para.forEach((value, key) => {
+    // Iterer gjennom hvert par og legg det inn i 'out'
+    // Hvis nøkkelen allerede finnes, overskrives den (siste vinner)
+    out[key] = value;
+  })
+
+
   return out;
 }
+
 
 // 2) parseUrl: håndter både absolutte og relative URL-er
 export function parseUrl(input: string): { path: string; query: Record<string, string> } {
@@ -28,7 +49,8 @@ export function parseUrl(input: string): { path: string; query: Record<string, s
 
 /** -------------------------- Self-check ----------------------------
  *  Kjør følgende kommando for å se om koden din kjørte
- *  npx tsx tasks/js-recap/medium/03_url_safe_parser.ts
+ * 
+ *  npx tsx docs/1_introduction/assignment/medium/09_parsing.ts
  *  ------------------------------------------------------------------
 */
 console.log(`Answer: ${JSON.stringify(parseQuery('?q=react%20hooks&page=1'))}\tExpected: {"q":"react hooks","page":"1"}`);
