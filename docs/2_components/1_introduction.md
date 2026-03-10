@@ -269,3 +269,5 @@ my-next-app/
     <td align="right"><a href="./2_static_components.md">Statiske komponenter →</a></td>
   </tr>
 </table>
+
+<!-- Lest  -->
