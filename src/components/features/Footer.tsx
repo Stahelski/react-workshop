@@ -11,6 +11,7 @@ export function Footer() {
         exercitationem incidunt earum esse veniam aperiam quasi nisi officiis.
         Alias cumque deserunt, quos excepturi molestiae illum vel. 
       </div>
+      
       <div style={{ flex: 1 }}>
         <h2 style={{textAlign: "center"}}>Want to know more?</h2>
         <nav
