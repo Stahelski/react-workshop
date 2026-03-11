@@ -178,3 +178,5 @@ function MyComponent({ someText }: MyProps) {
     <td align="right"><a href="./4_conditionals.md">Kondisjoner →</a></td>
   </tr>
 </table>
+
+<!-- Lest  -->

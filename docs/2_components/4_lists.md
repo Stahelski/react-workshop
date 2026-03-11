@@ -110,3 +110,6 @@ function ShoppingList() {
     <td align="right"><a href="../3_hooks/README.md">Neste emne →</a></td>
   </tr>
 </table>
+
+
+<!-- Lest  -->
