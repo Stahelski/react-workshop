@@ -22,3 +22,8 @@ git fetch upstream          // Henter endringer fra upstream uten å merge
 
 git status                  // Viser status på filer (endret, staged, unstaged)
 git log --oneline           // Viser commit-historikk i kort format
+-----------------------
+
+Lage ny branch og bytte til den:
+
+git checkout -b ny-branch-navn
