@@ -7,12 +7,12 @@ export default function Week2Page(){
 
     return(
         <>
-        <div className="week2PageWrapper">
-        <Badge label="Badge" level="info"/>
+        <main className="week2PageWrapper">
+        <Badge label="Sale" level="Success"/>
         <LinkButton label="Link" href="https://react.dev/reference/react/Suspense"/>
         <Paragraph text="Some text here" tSize="14px"/>
         <TextButton text="Some text here"/>
-        </div>
+        </main>
         </>
     )
 }

@@ -1,0 +1,54 @@
+/* Badge  */
+.badgeWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: fit-content;
+  padding: 0px 6px;
+  border: 1px solid;
+  border-radius: 4px;
+  border: solid black;
+  background-color: purple;
+  color: black;
+}
+
+.badgeWrapperSuccess {
+  border-color: green;
+  background-color: rgb(189, 255, 188);
+}
+
+.badgeWrapperWarning {
+  border-color: red;
+  background-color: rgb(255, 188, 188);
+}
+
+.badgeWrapperInfo {
+  border-color: orange;
+  background-color: rgb(255, 231, 188);
+}
+
+.badgeLabel {
+  margin: 2px 2px;
+}
+
+/* LinkButton  */
+.linkButtonWrapper {
+}
+
+.linkButton {
+}
+
+/* Paragraph */
+.paraWrapper {
+}
+
+.paraText {
+}
+
+/* TextButton */
+.textButtonWrapper {
+}
+
+.textButton {
+}

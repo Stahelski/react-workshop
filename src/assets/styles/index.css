@@ -120,9 +120,14 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  padding: 2em;
   min-width: 320px;
   max-width: 1028px;
+  min-height: 80vh;
+  border: solid;
 }
+
+
 
 /* This is just some wrapper style to make assignment examples stand out from eachother */
 .assignment-section {

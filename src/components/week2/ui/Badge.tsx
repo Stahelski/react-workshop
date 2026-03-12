@@ -9,25 +9,12 @@ export function Badge({
   level,
 }: {
   label: string;
-  level: "success" | "warning" | "info";
+  level: "Success" | "Warning" | "Info";
 }) {
-  let style = {};
-
-  if (level === "success") {
-    style = { color: "green" };
-  } else if (level === "warning") {
-    style = { color: "red" };
-  } else {
-    style = { color: "white" };
-  }
-
   return (
     <>
-      <span className="badgeWrapper">
+      <span className={`badgeWrapper${level} badgeWrapper`}>
         <p className="badgeLabel">{label}</p>
-        <p className="badgeLevel" style={style}>
-          {level}
-        </p>
       </span>
     </>
   );
