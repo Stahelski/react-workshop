@@ -10,9 +10,12 @@ import { ProductList } from "../components/examples/ProductList";
 import { StyledSection } from "../components/examples/StyledSection";
 import { TodoList } from "../components/examples/TodoList";
 
+import Card from "../components/week2/ui/card/Card"
+
 export default function App() {
   return (
     <main>
+      <Card />
       <HomepageHero />
       <h1>Assignment solution examples</h1>
       <h2>Easy</h2>

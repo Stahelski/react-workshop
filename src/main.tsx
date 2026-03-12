@@ -6,12 +6,10 @@ import App from "./pages/Home";
 import { Header } from "./components/week2/features/Header";
 import { Footer } from "./components/week2/features/Footer";
 
-import Week2Page from "./pages/Week2Page";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Header />
-    <Week2Page />
     <App />
     <Footer />
   </StrictMode>,
