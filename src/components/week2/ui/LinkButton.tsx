@@ -6,11 +6,9 @@
 export function LinkButton({ label, href }: { label: string; href: string }) {
   return (
     <>
-      <div className="linkButtonWrapper">
-        <a className="linkButton" href={href}>
-          {label}
-        </a>
-      </div>
+      <a className="linkButton" href={href}>
+        {label}
+      </a>
     </>
   );
 }

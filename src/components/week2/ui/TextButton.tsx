@@ -7,7 +7,7 @@ export function TextButton({text}: {text: string}) {
     <>
       <div className="textButtonWrapper">
         <button className="textButton">X</button>
-        {text}
+        <p className="textButtonPara">{text}</p>
       </div>
     </>
   );
