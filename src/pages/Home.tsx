@@ -10,12 +10,23 @@ import { ProductList } from "../components/examples/ProductList";
 import { StyledSection } from "../components/examples/StyledSection";
 import { TodoList } from "../components/examples/TodoList";
 
-import Card from "../components/week2/ui/card/Card"
+import Card from "../components/week2/ui/card/Card";
 
 export default function App() {
   return (
     <main>
-      <Card />
+      <Card
+        imageUrl="public/products/kontorstol.webp"
+        imageAltText="Kontorstol"
+        productName="ThunderX3 XTC ergonomisk kontorstol (mesh black)"
+        productDescription="Max 125kg, mesh, 3D armlene, klasse 4 gassløfter, justerbar."
+        available="6 på lager"
+        productNumber="Varenummer: 9266650 / Prodnr: SVGCLT3XL"
+        price="4 649,-"
+        linkTag="Look at"
+        linkURL="https://www.komplett.no/category/11075/gaming/gaming-utstyr/gamingstoler?list_view=list"
+      />
+
       <HomepageHero />
       <h1>Assignment solution examples</h1>
       <h2>Easy</h2>

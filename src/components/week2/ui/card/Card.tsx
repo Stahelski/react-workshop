@@ -1,37 +1,35 @@
-import { Badge } from "../components/Badge";
-import { LinkButton } from "../components/LinkButton";
-import { Paragraph } from "../components/Paragraph";
+interface CardProducts {
+  imageUrl: string;
+  imageAltText: string;
+  productName: string;
+  productDescription: string;
+  available: string;
+  productNumber: string;
+  price: string;
+  linkTag: string;
+  linkURL: string;
+}
 
-export default function Card() {
+export default function Card(product: CardProducts) {
   return (
     <>
       <div className="cardWrapper">
         <div className="imageContainer">
-          <img
-            height={200}
-            src="public/products/kontorstol.webp"
-            alt="hodetelefoner"
-          />
+          <img height={200} src={product.imageUrl} alt={product.imageAltText} />
         </div>
 
         <div className="infoContainer">
-          <p className="produktNavn">
-            ThunderX3 XTC ergonomisk kontorstol (mesh black)
-          </p>
-          <p className="produktBeskrivelse">
-            Max 125kg, mesh, 3D armlene, klasse 4 gassløfter, justerbar.
-          </p>
-          <p className="Tilgjengelig">6 på lager</p>
-          <p className="vareNummer">Varenummer: 9266650 / Prodnr: SVGCLT3XL</p>
+          <p className="produktNavn">{product.productName}</p>
+          <p className="produktBeskrivelse">{product.productDescription}</p>
+          <p className="Tilgjengelig"> {product.available} </p>
+          <p className="vareNummer"> {product.productNumber}</p>
         </div>
 
         <div className="badgeContainer">
-          {" "}
-          <Badge label="4 349,-" level="Success" />{" "}
-          <LinkButton
-            label="Link"
-            href="https://www.komplett.no/product/1312475/gaming/gaming-utstyr/gamingstoler/thunderx3-xtc-ergonomisk-kontorstol-mesh-black?queryid=3669cb9e82c82728a35ec103b1e81407&sort=None"
-          />{" "}
+          <p className="priceTag"> {product.price} </p>
+          <a href={product.linkURL} className="linkTag">
+            {product.linkTag}
+          </a>
         </div>
       </div>
     </>
