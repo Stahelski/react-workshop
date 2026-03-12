@@ -1,5 +1,16 @@
-export function LinkButton() {
-  return <></>;
-}
+// `LinkButton` dette er en `<a>` hvor vi skal
+// ta i mot følgende props: `label` og `href`.
+// Ligg på styling slik at dette også ser ut som
+// en knapp, f.eks border
 
-// https://react.dev/reference/react/Suspense
+export function LinkButton({ label, href }: { label: string; href: string }) {
+  return (
+    <>
+      <div className="linkButtonWrapper">
+        <a className="linkButton" href={href}>
+          {label}
+        </a>
+      </div>
+    </>
+  );
+}
