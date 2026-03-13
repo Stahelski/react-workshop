@@ -8,12 +8,13 @@ interface CardProducts {
   price: string;
   linkTag: string;
   linkURL: string;
+  inStock: boolean;
 }
 
 export default function Card(product: CardProducts) {
   return (
     <>
-      <div className="cardWrapper">
+      <a href={product.linkURL} className="cardWrapper">
         <div className="imageContainer">
           <img height={200} src={product.imageUrl} alt={product.imageAltText} />
         </div>
@@ -21,17 +22,18 @@ export default function Card(product: CardProducts) {
         <div className="infoContainer">
           <p className="produktNavn">{product.productName}</p>
           <p className="produktBeskrivelse">{product.productDescription}</p>
-          <p className="Tilgjengelig"> {product.available} </p>
+          <p className={product.inStock ? "Tilgjengelig" : "ikkeTilgjengelig"}>
+            <div className={product.inStock ? "dott" : "dottNot"}></div>
+            {product.inStock ? product.available : "0 på lager"}{" "}
+          </p>
+
           <p className="vareNummer"> {product.productNumber}</p>
         </div>
 
         <div className="badgeContainer">
           <p className="priceTag"> {product.price} </p>
-          <a href={product.linkURL} className="linkTag">
-            {product.linkTag}
-          </a>
         </div>
-      </div>
+      </a>
     </>
   );
 }

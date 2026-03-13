@@ -25,6 +25,20 @@ export default function App() {
         price="4 649,-"
         linkTag="Look at"
         linkURL="https://www.komplett.no/category/11075/gaming/gaming-utstyr/gamingstoler?list_view=list"
+        inStock={true}
+      />
+
+      <Card
+        imageUrl="public/products/hodetelefoner.webp"
+        imageAltText="Hodetelefoner"
+        productName="Ayda wireless ENC headset, On-Ear"
+        productDescription="Bluetooth, 10 m rekkevidde, opp til 24 t brukstid, noice cancelling mic"
+        available="17 på lager"
+        productNumber="Varenummer: 1319524 / Prodnr: 25463"
+        price="599,-"
+        linkTag="Look at"
+        linkURL="https://www.komplett.no/product/1319524/tv-lyd-bilde/hodetelefoner-tilbehoer/hodetelefoner/ayda-wireless-enc-headset-on-ear?queryid=1f25eff9dc10fd0390b79c6486e96272&sort=None"
+        inStock={false}
       />
 
       <HomepageHero />

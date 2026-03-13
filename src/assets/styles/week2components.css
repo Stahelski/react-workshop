@@ -9,6 +9,8 @@
   border: solid 1px gray;
   border-radius: 4px;
   background-color: white;
+  text-decoration: none;
+  color: black;
 }
 
 .infoContainer {
@@ -32,8 +34,33 @@
   font-size: 0.85rem;
 }
 .Tilgjengelig {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
   font-size: 0.85rem;
 }
+.ikkeTilgjengelig {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.85rem;
+}
+
+.dott {
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+  background-color: green;
+}
+.dottNot {
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+  background-color: rgb(230, 0, 0);
+}
+
 .vareNummer {
   color: gray;
   font-size: 0.8rem;
@@ -45,6 +72,15 @@
   justify-content: space-between;
   height: 100%;
   margin-left: auto;
+}
+
+.priceTag {
+  background-color: rgba(7, 212, 7, 0.482);
+  border: solid 1px gray;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 2px 8px;
 }
 
 /* ---------------- */
