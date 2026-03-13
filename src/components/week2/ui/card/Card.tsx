@@ -31,7 +31,10 @@ export default function Card(product: CardProducts) {
         </div>
 
         <div className="badgeContainer">
-          <p className="priceTag"> {product.price} </p>
+          <p className={product.inStock ? "priceTag" : "priseTagNotIn"}>
+            {" "}
+            {product.price}{" "}
+          </p>
         </div>
       </a>
     </>

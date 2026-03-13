@@ -70,10 +70,13 @@ export function ProductListAlternative(...) {
 ```
 
 ## Hard
-I disse oppgavene går vi litt utover hva vi har lært i undervisning og dere må mest sannsynlig lese litt på [react docs](https://react.dev/) eller google litt for å finne svar. 
+
+I disse oppgavene går vi litt utover hva vi har lært i undervisning og dere må mest sannsynlig lese litt på [react docs](https://react.dev/) eller google litt for å finne svar.
 
 #### Todo liste.
+
 Lag et todo komponent hvor du kan ligge til eller fjerne innhold. Du kan f.eks bruke [useState](https://react.dev/reference/react/useState) til å lagre en array av objekter og så lage en funksjon som fjerner eller ligger til innhold.
+
 ```tsx
 interface Todo {
     text: string
@@ -90,14 +93,16 @@ export function TodoList() {
 - Bruk en `<button>` for å markere en todo som ferdig
 - Bruk `<input>` for å ligge til flere todos ved å skrive inn.
 
-#### 
+####
 
 ## Bonus (valgfritt)
+
 Disse oppgavene er veldig krevende og dere må mest sannsynlig finne informasjon på egenhånd eller spørre om hjelp.
 
 #### Søkbare lister
 
 Bruk produkt listen vi allerede har til å lage et nytt komponent hvor du kan søke i innhold etter produkt navn. Her trenger dere å bruke følgende ukjente metoder
+
 - `useRef` for å følge med på et input felt
 - `.filter` for å søke etter produkter
 
