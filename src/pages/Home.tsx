@@ -11,12 +11,24 @@ import { StyledSection } from "../components/examples/StyledSection";
 import { TodoList } from "../components/examples/TodoList";
 
 import Card from "../components/week2/ui/card/Card";
+import ListCard from "../components/week2/ui/card/ListCard";
 
 export default function App() {
   return (
     <main>
-      <Card />
-      <Card />
+      <Card
+        name="stol"
+        price="123"
+        imageUrl="..."
+        inStock="..."
+        isOnSale=".."
+        linkURL=".."
+        productNumber=".."
+        available=".."
+        productDescription=".."
+        description=".."
+      />
+      <ListCard />
       <HomepageHero />
       <h1>Assignment solution examples</h1>
       <h2>Easy</h2>
