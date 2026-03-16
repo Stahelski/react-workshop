@@ -15,7 +15,7 @@ export function displayName(
   first?: string | null,
   last?: string | null,
   username?: string | null
-): string {
+): string | null {
   // TODO: bruk nested ternary + template literal
   return first || last ? `${first ?? ""}${first && last ? " " : ""}${last ?? ""}` : username ?? "ukjent";
 } 

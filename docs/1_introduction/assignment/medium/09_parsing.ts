@@ -10,6 +10,7 @@
 // 1) parseQuery: bygg et enkelt Record<string,string>
 export function parseQuery(qs: string): Record<string, string> {
   const out: Record<string, string> = {};
+  // Record = returnerer et Objekt med satt verdi 
   // TODO:
   // - fjern ledende '?'
   // - bruk new URLSearchParams(...)
@@ -26,7 +27,7 @@ if(qs.startsWith("?")){
   // Ex: out: [("a", "1"), ("b", "hei på deg")]
   // Ex: Key = "a", Value = "1"
 
-  //! .forEach() - Første parameter er alltid Value. Andre parameter er alltid Key. (Value også Key) i den rekkefølgen.
+  //! .forEach() - Første parameter er alltid Value. Andre parameter er alltid Key. (Value, også Key) i den rekkefølgen.
   para.forEach((value, key) => {
     // Iterer gjennom hvert par og legg det inn i 'out'
     // Hvis nøkkelen allerede finnes, overskrives den (siste vinner)

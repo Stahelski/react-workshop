@@ -7,17 +7,17 @@
  */
 
 // 1) Primitive typer
-const age: Number = 27;
-const myName: String = 'Ada';
-const isMember: Boolean = false;
-const scoreText: String = `score:${age}`;
+const age: number = 27;
+const myName: string = 'Ada';
+const isMember: boolean = false;
+const scoreText: string = `score:${age}`;
 
 // 2) Null/undefined-bevissthet
 let maybeCount: undefined = undefined;     
 let maybeNote: null = null;          
 
 // 3) Arrays (to syntakser som betyr det samme)
-const pointsA: Number[] = [10, 20, 30];  
+const pointsA: number[] = [10, 20, 30];  
 const pointsB: Array<number> = [5, 15];   
 
 // 4) Enkle funksjoner (angi parameter- og returtyper)

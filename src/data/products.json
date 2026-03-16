@@ -5,7 +5,11 @@
     "description": "Ergonomisk kontorstol med justerbar høyde og ryggstøtte. Gir støtte gjennom hele arbeidsdagen og passer godt både på hjemmekontor og i åpent kontorlandskap.",
     "imageUrl": "/products/kontorstol.webp",
     "inStock": true,
-    "isOnSale": false
+    "isOnSale": false,
+    "linkURL": "https://www.example.com/kontorstol",
+    "productNumber": "Varenummer: 123456 / Prodnr: ABC123",
+    "available": "10 på lager",
+    "productDescription": "Ergonomisk kontorstol med justerbar høyde og ryggstøtte for komfortabel arbeidsdag."
   },
   {
     "name": "Skrivebordslampe",
@@ -13,7 +17,11 @@
     "description": "Justerbar skrivebordslampe som gir behagelig arbeidslys uten å blende. Perfekt når du jobber ved PC-en eller skriver for hånd på kveldstid.",
     "imageUrl": "/products/skrivebordslampe.png",
     "inStock": true,
-    "isOnSale": true
+    "isOnSale": true,
+    "linkURL": "https://www.example.com/skrivebordslampe",
+    "productNumber": "Varenummer: 234567 / Prodnr: DEF456",
+    "available": "15 på lager",
+    "productDescription": "Justerbar lampe med behagelig lys for arbeidsbordet."
   },
   {
     "name": "Laptopstativ",
@@ -21,7 +29,11 @@
     "description": "Stativ til bærbar PC som løfter skjermen opp i øyehøyde. Bidrar til en mer ergonomisk arbeidsstilling og gir bedre plass til tastatur og mus på pulten.",
     "imageUrl": "/products/laptopstativ.webp",
     "inStock": true,
-    "isOnSale": false
+    "isOnSale": false,
+    "linkURL": "https://www.komplett.no/",
+    "productNumber": "Varenummer: 9266650 / Prodnr: SVGCLT3XL",
+    "available": "6 på lager",
+    "productDescription": "Max 125kg, mesh, 3D armlene, klasse 4 gassløfter, justerbar."
   },
   {
     "name": "Notatbok A4",
@@ -29,7 +41,11 @@
     "description": "Linjert notatbok i A4-format til møte-notater, planlegging og idémyldring. Solid omslag og god papirkvalitet som gjør det behagelig å skrive med både penn og blyant.",
     "imageUrl": "/products/notatbok-a4.webp",
     "inStock": true,
-    "isOnSale": true
+    "isOnSale": true,
+    "linkURL": "https://www.example.com/notatbok",
+    "productNumber": "Varenummer: 345678 / Prodnr: GHI789",
+    "available": "20 på lager",
+    "productDescription": "Linjert notatbok i A4-format med solid omslag."
   },
   {
     "name": "Kulepenn 10-pakning",
@@ -37,7 +53,11 @@
     "description": "Pakke med 10 blå kulepenner til daglig bruk på kontoret. Skriv jevnt uten å skrape, og ha alltid en ekstra penn tilgjengelig på pulten eller i vesken.",
     "imageUrl": "/products/kulepenn-pakke.png",
     "inStock": false,
-    "isOnSale": false
+    "isOnSale": false,
+    "linkURL": "https://www.example.com/kulepenn",
+    "productNumber": "Varenummer: 456789 / Prodnr: JKL012",
+    "available": "0 på lager",
+    "productDescription": "Pakke med 10 blå kulepenner for daglig bruk."
   },
   {
     "name": "Hodetelefoner med mikrofon",
@@ -45,7 +65,11 @@
     "description": "Komfortable hodetelefoner med innebygd mikrofon til videomøter og fokusarbeid. Demper lyd fra omgivelsene og gjør det enklere å høre kollegaer tydelig på nett.",
     "imageUrl": "/products/hodetelefoner.webp",
     "inStock": true,
-    "isOnSale": false
+    "isOnSale": false,
+    "linkURL": "https://www.example.com/hodetelefoner",
+    "productNumber": "Varenummer: 567890 / Prodnr: MNO345",
+    "available": "8 på lager",
+    "productDescription": "Komfortable hodetelefoner med mikrofon for møter."
   },
   {
     "name": "Musmatte",
@@ -53,7 +77,11 @@
     "description": "Enkel og slitesterk musmatte som gir jevn bevegelse for datamusen. Passer fint på de fleste skrivebord og gjør det mer behagelig å jobbe lenge ved PC-en.",
     "imageUrl": "/products/musmatte.avif",
     "inStock": true,
-    "isOnSale": true
+    "isOnSale": true,
+    "linkURL": "https://www.example.com/musmatte",
+    "productNumber": "Varenummer: 678901 / Prodnr: PQR678",
+    "available": "25 på lager",
+    "productDescription": "Slitesterk musmatte for jevn musbevegelse."
   },
   {
     "name": "Dokumentmappe",
@@ -61,7 +89,11 @@
     "description": "Tynn dokumentmappe til oppbevaring av viktige papirer, søknader og møterapporter. Holder arkene rene og pene, og gjør det enklere å holde orden på papirene.",
     "imageUrl": "/products/dokumentmappe.png",
     "inStock": false,
-    "isOnSale": false
+    "isOnSale": false,
+    "linkURL": "https://www.example.com/dokumentmappe",
+    "productNumber": "Varenummer: 789012 / Prodnr: STU901",
+    "available": "0 på lager",
+    "productDescription": "Tynn mappe for oppbevaring av dokumenter."
   },
   {
     "name": "Whiteboard-tavle",
@@ -69,7 +101,11 @@
     "description": "Mellomstor whiteboard-tavle til planlegging, idédugnad og beskjeder. Leveres med oppheng og kan brukes sammen med tusj og magneter for et fleksibelt arbeidsverktøy.",
     "imageUrl": "/products/whiteboard.webp",
     "inStock": true,
-    "isOnSale": true
+    "isOnSale": true,
+    "linkURL": "https://www.example.com/whiteboard",
+    "productNumber": "Varenummer: 890123 / Prodnr: VWX234",
+    "available": "5 på lager",
+    "productDescription": "Mellomstor whiteboard-tavle med oppheng."
   },
   {
     "name": "Kontorkrus",
@@ -77,6 +113,10 @@
     "description": "Enkelt, hvitt kontorkrus til kaffe, te eller kakao i pausene. Tåler oppvaskmaskin og passer fint inn på skrivebordet ved siden av PC-en og notatboken.",
     "imageUrl": "/products/kontorkrus.webp",
     "inStock": true,
-    "isOnSale": false
+    "isOnSale": false,
+    "linkURL": "https://www.example.com/kontorkrus",
+    "productNumber": "Varenummer: 901234 / Prodnr: YZA567",
+    "available": "12 på lager",
+    "productDescription": "Enkelt hvitt krus som tåler oppvaskmaskin."
   }
 ]

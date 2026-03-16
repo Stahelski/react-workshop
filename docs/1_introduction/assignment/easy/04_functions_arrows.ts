@@ -8,6 +8,7 @@
 export function ad (a: number, b: number): number {
   return a+b;
 }
+
 export const add = (a: number, b: number): number => a + b;
 
 // 2) Gjør skriv om denne arrow-funksjonen til en vanlig function og fiks logikken slik at den gir tibake riktig svar

@@ -1,42 +1,46 @@
+import products from "../../../../data/products.json";
+
 interface CardProducts {
+  name: string;
+  price: number;
+  description: string;
   imageUrl: string;
-  imageAltText: string;
-  productName: string;
-  productDescription: string;
-  available: string;
-  productNumber: string;
-  price: string;
-  linkTag: string;
-  linkURL: string;
   inStock: boolean;
+  isOnSale: boolean;
+  linkURL: string;
+  productNumber: string;
+  available: string;
+  productDescription: string;
 }
 
-export default function Card(product: CardProducts) {
-  return (
-    <>
-      <a href={product.linkURL} className="cardWrapper">
+export default function Card() {
+  const list = products.map((info: CardProducts) => {
+    return (
+      <a href={info.linkURL} key={info.name} className="cardWrapper">
         <div className="imageContainer">
-          <img height={200} src={product.imageUrl} alt={product.imageAltText} />
+          <img height={200} src={info.imageUrl} alt={info.name} />
         </div>
 
         <div className="infoContainer">
-          <p className="produktNavn">{product.productName}</p>
-          <p className="produktBeskrivelse">{product.productDescription}</p>
-          <p className={product.inStock ? "Tilgjengelig" : "ikkeTilgjengelig"}>
-            <div className={product.inStock ? "dott" : "dottNot"}></div>
-            {product.inStock ? product.available : "0 på lager"}{" "}
+          <p className="produktNavn">{info.name}</p>
+          <p className="produktBeskrivelse">{info.description}</p>
+          <p className={info.inStock ? "Tilgjengelig" : "ikkeTilgjengelig"}>
+            <div className={info.inStock ? "dott" : "dottNot"}></div>
+            {info.inStock ? info.available : "0 på lager"}{" "}
           </p>
 
-          <p className="vareNummer"> {product.productNumber}</p>
+          <p className="vareNummer"> {info.productNumber}</p>
         </div>
 
         <div className="badgeContainer">
-          <p className={product.inStock ? "priceTag" : "priseTagNotIn"}>
+          <p className={info.inStock ? "priceTag" : "priseTagNotIn"}>
             {" "}
-            {product.price}{" "}
+            {info.price},-{" "}
           </p>
         </div>
       </a>
-    </>
-  );
+    );
+  });
+
+  return <>{list}</>;
 }

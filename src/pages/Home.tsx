@@ -15,32 +15,8 @@ import Card from "../components/week2/ui/card/Card";
 export default function App() {
   return (
     <main>
-      <Card
-        imageUrl="public/products/kontorstol.webp"
-        imageAltText="Kontorstol"
-        productName="ThunderX3 XTC ergonomisk kontorstol (mesh black)"
-        productDescription="Max 125kg, mesh, 3D armlene, klasse 4 gassløfter, justerbar."
-        available="6 på lager"
-        productNumber="Varenummer: 9266650 / Prodnr: SVGCLT3XL"
-        price="4 649,-"
-        linkTag="Look at"
-        linkURL="https://www.komplett.no/category/11075/gaming/gaming-utstyr/gamingstoler?list_view=list"
-        inStock={true}
-      />
-
-      <Card
-        imageUrl="public/products/hodetelefoner.webp"
-        imageAltText="Hodetelefoner"
-        productName="Ayda wireless ENC headset, On-Ear"
-        productDescription="Bluetooth, 10 m rekkevidde, opp til 24 t brukstid, noice cancelling mic"
-        available="17 på lager"
-        productNumber="Varenummer: 1319524 / Prodnr: 25463"
-        price="599,-"
-        linkTag="Look at"
-        linkURL="https://www.komplett.no/product/1319524/tv-lyd-bilde/hodetelefoner-tilbehoer/hodetelefoner/ayda-wireless-enc-headset-on-ear?queryid=1f25eff9dc10fd0390b79c6486e96272&sort=None"
-        inStock={false}
-      />
-
+      <Card />
+      <Card />
       <HomepageHero />
       <h1>Assignment solution examples</h1>
       <h2>Easy</h2>

@@ -1,37 +1,42 @@
 /**
  * EASY 3: Operatorer & kortslutning (&&, ||, ??, ===)
- * 
+ *
  * Instruks: Bruk riktige operatorer. Unngå feil som at '' og 0 behandles som "mangler".
  */
-
 
 //  || = Logical OR, Returnerer første “truthy” verdi.
 //  ?? = Nullish Coalescing, Returnerer høyre side kun hvis venstre er null eller undefined
 //   | = union type (TypeScript), Verdien kan være enten string eller null
 //  ? = optional parameter(first?:),  Så first kan være: string eller null eller undefined - fordi den er optional
 
-
 // 1) Nullish fallback – behold '' og 0 som gyldige verdier
-export function safeTitle(input: string | number | null | undefined, fallback: string): string {
+export function safeTitle(
+  input: string | number | null | undefined,
+  fallback: string,
+): string {
   // TODO: bruk ??
+
   return (input ?? fallback).toString();
 }
 
-// 2) Vis tekst om cond er "truthy" – ellers tom streng.. - return første truthy av cond og text, hvist ingen av de er truthy return "" som streng.  
+// 2) Vis tekst om cond er "truthy" – ellers tom streng.. - return første truthy av cond og text, hvist ingen av de er truthy return "" som streng.
 export function showIf(cond: unknown, text: string): string {
   // TODO: bruk &&
   return ((cond && text) || "") as string;
 }
 
-// 3) Korrekt fallback som returnerer et tall, hvis tallet ikke er en positiv integer returner 0
+// 3) Korrekt fallback som returnerer et tall.
+// Hvis tallet ikke er en positiv integer returner 0
 export function fallbackZero(n: number | null | undefined): number {
   // TODO: bruk ??
   return (Number.isInteger(n) && n > 0 ? n : undefined) ?? 0;
 }
 
-// 4) Streng sammenligning (strict equality), pass på typen!
-export function isExactZero(n: number|string): boolean {
+// 4) Streng sammenligning (strict equality).
+// Pass på typen!
+export function isExactZero(n: number | string): boolean {
   // TODO: bruk ===
+  // bedre - return Number(n) === 0;
   return n === 0;
 }
 
@@ -41,18 +46,18 @@ export function isInRange(n: number, min: number, max: number): boolean {
   return n >= min && n <= max;
 }
 
-/** -------------------------- Self-check ---------------------------- 
+/** -------------------------- Self-check ----------------------------
  *  Kjør følgende kommando for å se om koden din kjørte
  *  npx tsx docs/1_introduction/assignment/easy/03_operators_shortcircuit.ts
  *  ------------------------------------------------------------------
-*/
+ */
 
-console.log(`Answer: ${safeTitle('', 'Untitled')}\t\t\tExpected: `);
-console.log(`Answer: ${safeTitle(0, 'Untitled')}\t\t\tExpected: 0`);
-console.log(`Answer: ${safeTitle(undefined, 'X')}\t\t\tExpected: X`);
+console.log(`Answer: ${safeTitle("", "Untitled")}\t\t\tExpected: `);
+console.log(`Answer: ${safeTitle(0, "Untitled")}\t\t\tExpected: 0`);
+console.log(`Answer: ${safeTitle(undefined, "X")}\t\t\tExpected: X`);
 
-console.log(`Answer: ${showIf(true, 'Hei')}\t\t\tExpected: Hei`);
-console.log(`Answer: ${showIf(0, 'Hei')}\t\t\tExpected: `);
+console.log(`Answer: ${showIf(true, "Hei")}\t\t\tExpected: Hei`);
+console.log(`Answer: ${showIf(0, "Hei")}\t\t\tExpected: `);
 
 console.log(`Answer: ${fallbackZero(undefined)}\t\t\tExpected: 0`);
 console.log(`Answer: ${fallbackZero(10)}\t\t\tExpected: 10`);
