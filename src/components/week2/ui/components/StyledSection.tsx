@@ -1,4 +1,4 @@
-import { Children } from "react";
+import { ReactNode } from "react";
 
 export function StyledSection({
   title,
@@ -25,4 +25,3 @@ export function StyledSection({
 //! LES:
 // https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 // https://react.dev/learn/rendering-lists
-// https://react.dev/reference/react/Children

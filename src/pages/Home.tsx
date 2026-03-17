@@ -13,6 +13,7 @@ import { TodoList } from "../components/examples/TodoList";
 import Card from "../components/week2/ui/card/Card";
 import ListCard from "../components/week2/ui/card/ListCard";
 import { StyledSection } from "../components/week2/ui/components/StyledSection";
+import ToDo from "../components/week2/ui/components/ToDo";
 
 function ProductListAlternative() {
   return (
@@ -29,6 +30,8 @@ function ProductListAlternative() {
 export default function App() {
   return (
     <main>
+      <ToDo />
+
       <ProductListAlternative />
 
       <StyledSection
