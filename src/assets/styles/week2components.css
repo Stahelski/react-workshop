@@ -1,3 +1,23 @@
+/* StyledSection */
+.dark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  background-color: rgb(52, 49, 49);
+  color: white;
+}
+.light {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  background-color: rgb(244, 244, 244);
+  color: black;
+}
+
 /* Card */
 .cardWrapper {
   display: flex;

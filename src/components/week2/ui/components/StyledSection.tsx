@@ -1,14 +1,25 @@
 import { Children } from "react";
 
-interface SectionProps {
+export function StyledSection({
+  title,
+  text,
+  background,
+  children,
+}: {
   title: string;
   text: string;
-  background: "light" | "dark";
-  children: ReactNode; // ReactNode = alle typer innhold React kan rendre
-}
-
-export function StyledSection(items: SectionProps) {
-  return <>{items.children}</>;
+  background: "dark" | "light";
+  children: ReactNode;
+}) {
+  return (
+    <>
+      <section className={background === "dark" ? "dark" : "light"}>
+        <h1>{title}</h1>
+        <p>{text}</p>
+        {children}
+      </section>
+    </>
+  );
 }
 
 //! LES:

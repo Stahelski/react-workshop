@@ -7,21 +7,44 @@ import { ProductCard } from "../components/ui/cards/ProductCard";
 import { Section } from "../components/features/Section";
 import { Paragraph } from "../components/ui/text/Paragraph";
 import { ProductList } from "../components/examples/ProductList";
-import { StyledSection } from "../components/examples/StyledSection";
+// import { StyledSection } from "../components/examples/StyledSection";
 import { TodoList } from "../components/examples/TodoList";
 
 import Card from "../components/week2/ui/card/Card";
 import ListCard from "../components/week2/ui/card/ListCard";
+import { StyledSection } from "../components/week2/ui/components/StyledSection";
+
+function ProductListAlternative() {
+  return (
+    <StyledSection
+      title="opptil -70%"
+      text="Elleville dager!"
+      background="dark"
+    >
+      <ListCard />
+    </StyledSection>
+  );
+}
 
 export default function App() {
   return (
     <main>
+      <ProductListAlternative />
+
+      <StyledSection
+        title="opptil -50%"
+        text="Kjøp nå, betal i mai. Helt uten ekstra kostnader!"
+        background="light"
+      >
+        <ListCard />
+      </StyledSection>
+
       <Card
         name="stol"
         price="123"
         imageUrl="..."
-        inStock="..."
-        isOnSale=".."
+        inStock={true}
+        isOnSale={false}
         linkURL=".."
         productNumber=".."
         available=".."
