@@ -1,25 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { setItem, getItem } from "../../util/LocalStorage";
 
 interface Todo {
   id: number;
   text: string;
-  isDone: boolean;
 }
 
-// https://www.w3schools.com/react/react_usestate.asp
+let nextId = 0;
 
-export default function ToDo(i: Todo) {
-  const [todos, setTodos] = useState<Todo[]>([]);
+export default function ToDo() {
+  const [todoList, setToDoList] = useState<Todo[]>(() => {
+    return getItem<Todo[]>("todos") || [];
+  });
+  const [newToDoText, setNewToDoText] = useState<string>("");
 
-  const [inputValue, setInputValue] = useState<string>("");
-
+  // Oppdaterer input felt med current verdi hver render.
   function updateChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setInputValue(e.target.value);
+    setNewToDoText(e.target.value);
   }
 
-  function newTodo() {
-    return {};
+  // tar id og text fra inputValue og legger til i nytt array
+  // prevList = forige verdi av state todos.
+  function addToDo() {
+    // nytt todo objekt = { id: nextId, text: newToDoText }
+    // alle gamle todo = ...prev
+    setToDoList((prev) => [...prev, { id: nextId++, text: newToDoText }]);
   }
+
+  useEffect(() => {
+    setItem("todoList", todoList);
+  }, [todoList]);
 
   return (
     <>
@@ -29,18 +39,39 @@ export default function ToDo(i: Todo) {
         type="text"
         id="todo-in"
         placeholder="Add to do"
-        value={inputValue}
+        value={newToDoText}
         onChange={updateChange}
       />
-      <mark>{i.isDone}</mark>
+
+      {/* <mark>{i.isDone}</mark> */}
       <button
         onClick={() => {
-          setInputValue("");
-          onSetToDo(todos);
+          addToDo();
+          setNewToDoText("");
         }}
       >
         Add
       </button>
+
+      <ul>
+        {/* mapper over "array todos", for hvert element i array lag li med key-id, innhold-text*/}
+        {todoList.map((todo) => (
+          <div className="listItem">
+            <input type="checkbox" value="yes"></input>
+            <li key={todo.id}>{todo.text}</li>
+
+            <button
+              onClick={() => {
+                // Lag en ny liste med todo, lag listen med alle elementer som er annerledes fra a.id. (En liste med alle todo annen så "denne")
+                setToDoList(todoList.filter((a) => a.id !== todo.id));
+                setNewToDoText("");
+              }}
+            >
+              Delete
+            </button>
+          </div>
+        ))}
+      </ul>
     </>
   );
 }

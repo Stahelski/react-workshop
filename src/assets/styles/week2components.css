@@ -1,3 +1,14 @@
+/* To Do  */
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 1rem;
+  border: solid 1px gray;
+  padding: 0.2rem;
+}
+
 /* StyledSection */
 .dark {
   display: flex;
