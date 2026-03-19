@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import toUpper from "../../util/toUpper";
 import { useLocalStorage } from "../../util/hooks/LocalStorage";
 
@@ -12,6 +12,7 @@ let nextId = 0;
 export default function ToDo() {
   const [todoList, setToDoList] = useLocalStorage<Todo[]>("todo", []);
   const [newToDoText, setNewToDoText] = useState<string>("");
+  const prevInput = useRef("");
 
   function updateChange(e: React.ChangeEvent<HTMLInputElement>) {
     setNewToDoText(e.target.value);
@@ -21,6 +22,14 @@ export default function ToDo() {
     if (newToDoText.trim() === "") return;
     setToDoList([...todoList, { id: nextId++, text: newToDoText }]);
   }
+
+  // Legg fungsjonen på en kanpp, noClick => ta alle elementer fra todoList, iterer over, sammenlign rekkefølgen av bokstavene, lag en kopi av listen med verdiene i alfabetisk rekkefølge.
+
+  function sort() {}
+  // - `useRef` for å følge med på et input felt
+  // - https://www.w3schools.com/react/react_useref.asp
+  // - `.filter` for å søke etter produkter
+  // - https://www.w3schools.com/jsref/jsref_filter.asp
 
   return (
     <>
@@ -42,6 +51,15 @@ export default function ToDo() {
         }}
       >
         Add
+      </button>
+
+      <button
+        onClick={() => {
+          sort();
+          setNewToDoText("");
+        }}
+      >
+        Sort
       </button>
 
       <ul>
