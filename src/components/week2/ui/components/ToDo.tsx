@@ -55,7 +55,6 @@ export default function ToDo() {
 
             <button
               onClick={() => {
-                // Lag en ny liste med todo, lag listen med alle elementer som er annerledes fra a.id. (En liste med alle todo annen så "denne")
                 setToDoList(todoList.filter((a) => a.id !== todo.id));
                 setNewToDoText("");
               }}
