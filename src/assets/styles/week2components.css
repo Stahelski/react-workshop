@@ -3,8 +3,8 @@
 .listItem {
   display: flex;
   justify-content: space-between;
-  width: fit-content;
-  gap: 1rem;
+  width: 30ch;
+  gap: 2rem;
   border: solid 1px gray;
   padding: 0.2rem;
 }

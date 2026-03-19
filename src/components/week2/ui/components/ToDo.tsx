@@ -1,35 +1,26 @@
-import { useEffect, useState } from "react";
-import { setItem, getItem } from "../../util/LocalStorage";
+import { useState } from "react";
+import toUpper from "../../util/toUpper";
+import { useLocalStorage } from "../../util/hooks/LocalStorage";
 
 interface Todo {
-  id: number;
+  id: number | string;
   text: string;
 }
 
 let nextId = 0;
 
 export default function ToDo() {
-  const [todoList, setToDoList] = useState<Todo[]>(() => {
-    return getItem<Todo[]>("todos") || [];
-  });
+  const [todoList, setToDoList] = useLocalStorage<Todo[]>("todo", []);
   const [newToDoText, setNewToDoText] = useState<string>("");
 
-  // Oppdaterer input felt med current verdi hver render.
   function updateChange(e: React.ChangeEvent<HTMLInputElement>) {
     setNewToDoText(e.target.value);
   }
 
-  // tar id og text fra inputValue og legger til i nytt array
-  // prevList = forige verdi av state todos.
   function addToDo() {
-    // nytt todo objekt = { id: nextId, text: newToDoText }
-    // alle gamle todo = ...prev
-    setToDoList((prev) => [...prev, { id: nextId++, text: newToDoText }]);
+    if (newToDoText.trim() === "") return;
+    setToDoList([...todoList, { id: nextId++, text: newToDoText }]);
   }
-
-  useEffect(() => {
-    setItem("todoList", todoList);
-  }, [todoList]);
 
   return (
     <>
@@ -54,11 +45,13 @@ export default function ToDo() {
       </button>
 
       <ul>
-        {/* mapper over "array todos", for hvert element i array lag li med key-id, innhold-text*/}
         {todoList.map((todo) => (
-          <div className="listItem">
-            <input type="checkbox" value="yes"></input>
-            <li key={todo.id}>{todo.text}</li>
+          <div key={todo.id} className="listItem">
+            <li>
+              {" "}
+              <input type="checkbox" value="yes"></input>
+              {toUpper(todo.text)}
+            </li>
 
             <button
               onClick={() => {
