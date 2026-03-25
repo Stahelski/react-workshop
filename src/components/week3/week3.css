@@ -48,3 +48,9 @@
   text-decoration: none;
   color: black;
 }
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}

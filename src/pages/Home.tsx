@@ -13,11 +13,13 @@ import { TodoList } from "../components/examples/TodoList";
 import Counter from "../components/week3/counter";
 import DD from "../components/week3/dropDown";
 import { SpotTheError } from "../components/assignment/SpotTheError";
+import Form from "../components/week3/Form";
 
 export default function App() {
   return (
     <main>
       <HomepageHero />
+      <Form />
       <SpotTheError title="Title" />
       <DD
         items={[
