@@ -10,10 +10,23 @@ import { ProductList } from "../components/examples/ProductList";
 import { StyledSection } from "../components/examples/StyledSection";
 import { TodoList } from "../components/examples/TodoList";
 
+import Counter from "../components/week3/counter";
+import DD from "../components/week3/dropDown";
+import { SpotTheError } from "../components/assignment/SpotTheError";
+
 export default function App() {
   return (
     <main>
       <HomepageHero />
+      <SpotTheError title="Title" />
+      <DD
+        items={[
+          { label: "Assignment", href: "/" },
+          { label: "Readme", href: "/" },
+          { label: "Contact", href: "/" },
+        ]}
+      />
+      <Counter />
       <h1>Assignment solution examples</h1>
       <h2>Easy</h2>
       <Section label="1) Layout">

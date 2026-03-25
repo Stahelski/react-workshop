@@ -1,0 +1,50 @@
+.DropDownWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ddBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 162px;
+  height: fit-content;
+  background-color: white;
+  color: black;
+  border: solid 1px rgb(176, 176, 176);
+}
+
+.Open {
+  border-radius: 6px;
+}
+
+.ddBtn:hover {
+  border-radius: 6px;
+  border: solid 1px rgb(148, 148, 148);
+}
+
+.Close {
+  border-radius: 6px 6px 0px 0px;
+}
+
+.dropDownUl {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 120px;
+  height: 115px;
+  background-color: white;
+  border-radius: 0px 0px 6px 6px;
+  border: solid 1px rgb(176, 176, 176);
+  list-style: none;
+  margin: 0;
+  gap: 4px;
+}
+
+.dropDownA {
+  text-decoration: none;
+  color: black;
+}

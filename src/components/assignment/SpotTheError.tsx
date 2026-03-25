@@ -4,9 +4,9 @@ import { useState } from "react";
 export function SpotTheError({
   title = "Spot the errors",
 }: {
-  title: boolean;
+  title: string; //! title er ikke en boolean
 }) {
-  const [counter, setCounter] = useState<number>();
+  const [counter, setCounter] = useState<number>(0); //! husk å gi start verdi
   const [person, setPerson] = useState({
     name: "Ole Gunnar",
     address: "Små gaten 6",
@@ -15,7 +15,8 @@ export function SpotTheError({
 
   function handleUpdatePerson() {
     // Her skal vi oppdatere personen med ny alder
-    setPerson(old => ({old.age = 27, ...old}))
+    //! ...old skal komme først, age: ikke age =
+    setPerson((old) => ({ ...old, age: 27 }));
   }
 
   return (
