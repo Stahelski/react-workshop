@@ -16,7 +16,7 @@ export default function ToDo() {
       return;
     }
 
-    updateList((prev) => [...prev, input]);
+    updateList((prev) => [...prev, input]); // Løser stale state
     setInput("");
   }
 
@@ -36,12 +36,14 @@ export default function ToDo() {
       />
       <button onClick={addTask}>Add</button>
 
-      <div>
+      <div className="">
         {list.map((todo, index) => (
-          <div key={index}>
+          <div className="toDoWrapperContent" key={index}>
             <p>{todo}</p>
-            <button onClick={() => delite(todo)}>Delite</button>
-            <input type="checkbox" />
+            <div>
+              <button onClick={() => delite(todo)}>Delite</button>
+              <input type="checkbox" id="check" />
+            </div>
           </div>
         ))}
       </div>

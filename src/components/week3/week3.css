@@ -55,3 +55,22 @@
   width: fit-content;
   gap: 4px;
 }
+
+.toDoWrapper {
+  width: fit-content;
+  height: fit-content;
+}
+
+.toDoWrapperContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding-left: 4px;
+  height: 30px;
+  gap: 8px;
+  margin-top: 4px;
+  border: solid 1px gray;
+}
