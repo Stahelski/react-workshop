@@ -9,11 +9,10 @@ export default function Form() {
   }
 
   function checkVal() {
-
     if (input.length < 4) {
-      setError("short");
+      setError("Your username needs to be longer");
     } else if (input.length > 32) {
-      setError("long");
+      setError("Your username needs to be shorter");
     } else {
       return;
     }
