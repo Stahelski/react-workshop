@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export default function ToDo() {
-  // <string[]>([]) Fordi useState forventer da stringArray - tomt Array
   const [list, updateList] = useState<string[]>([]);
   const [input, setInput] = useState<string>("");
 
