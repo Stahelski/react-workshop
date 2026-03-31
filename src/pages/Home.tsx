@@ -15,11 +15,13 @@ import DD from "../components/week3/dropDown";
 // import { SpotTheError } from "../components/assignment/SpotTheError";
 import Form from "../components/week3/Form";
 import ToDo from "../components/week3/Todo";
+import FormComp from "../components/week3/formComp";
 
 export default function App() {
   return (
     <main>
       <HomepageHero />
+      <FormComp />
       <ToDo />
       <Form />
       {/* <SpotTheError title="Title" /> */}

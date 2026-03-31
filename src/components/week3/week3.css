@@ -74,3 +74,9 @@
   margin-top: 4px;
   border: solid 1px gray;
 }
+
+label,
+input,
+button {
+  max-width: 200px;
+}
