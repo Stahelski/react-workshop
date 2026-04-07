@@ -1,29 +1,14 @@
+// https://react.dev/learn/thinking-in-react
+
 import { useState } from "react";
-
-type Props = {
-  label: string;
-  value: string;
-  onChange: ChangeEventHandler<HTMLInputElement>;
-};
-
-const initial: Props = {
-  label: "",
-  value: "",
-  onChange: () => {},
-};
+import TextInput from "./textInput";
 
 export default function Messenger() {
-  const [input, setInput] = useState<Props>(initial);
+  const [input, setInput] = useState<string>("");
   return (
     <div>
-      <label htmlFor="tin">{input.label}</label>
-      <input
-        id="tin"
-        type="text"
-        placeholder="some text"
-        value={input.value}
-        onChange={input.onChange}
-      />
+      <TextInput label="Skriv noe" value={input} onChange={setInput} />
+      <p>{input}</p>
     </div>
   );
 }
